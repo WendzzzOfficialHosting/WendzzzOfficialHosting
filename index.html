@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | WendzzzStore.id</title>
+    <link href="https://fonts.googleapis.com/css2?family=poppins:wght@300;400;500;600;700;800&family=roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-dtoqo9rwch3ppgcwaea1bizoc6xxalwesw9c2qqeaiftl+vegovlnee1c9qx4tctnwmmn13tzye+gimm8e2lwa==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/chat.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+             <i class="fas fa-meteor fa-fw me-2"></i>WendzzzStore.id
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="/products"><i class="fas fa-store fa-fw"></i>Produk Toko</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="/layanan"><i class="fas fa-bolt fa-fw"></i>Layanan PPOB</a>
+                </li>
+
+                 <li class="nav-item">
+                    <a class="nav-link " href="/docs"><i class="fas fa-book-open fa-fw"></i>Dokumentasi</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="/info-board"><i class="fas fa-bullhorn fa-fw"></i>Info Board</a>
+                </li>
+
+            </ul>
+            <ul class="navbar-nav">
+
+                    <li class="nav-item">
+                        <a class="nav-link " href="/login"><i class="fas fa-sign-in-alt fa-fw"></i>Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-light btn-sm ms-lg-2 mt-2 mt-lg-0 " href="/register"><i class="fas fa-user-plus fa-fw"></i>Register</a>
+                    </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+<style>
+    .dropdown-menu.animate {
+        animation-duration: 0.3s;
+        animation-fill-mode: both;
+    }
+    .dropdown-menu.slideIn {
+        animation-name: slideIn;
+    }
+    @keyframes slideIn {
+        0% {
+            transform: translateY(1rem);
+            opacity: 0;
+        }
+        100% {
+            transform:translateY(0rem);
+            opacity: 1;
+        }
+    }
+</style>
+    <div class="alert-container">
+
+
+
+
+
+    </div>
+
+    <div class="main-content-wrapper">
+
+
+
+        <div class="container-fluid gx-0">
+            <div class="row gx-0">
+
+                    <main class="col-12 main-col-padding">
+                        <div class="container page-content-container no-title-margin">
+
+
+<div class="container py-4">
+    <div class="text-center mb-5" data-aos="fade-up">
+        <h1 class="display-4 fw-bold mb-3">WendzzzStore.id</h1>
+        <p class="lead text-muted col-md-8 mx-auto">Solusi top-up game, layanan PPOB, VPS, Panel Pterodactyl, dan berbagai kebutuhan digital Anda dengan harga terbaik dan proses cepat.</p>
+        <a href="/layanan" class="btn btn-warning btn-lg shadow fw-bold pulse-animation mt-3">
+            <i class="fas fa-bolt me-2"></i> PPOB & Top Up Game Cepat!
+        </a>
+    </div>
+    <style>
+        .pulse-animation {
+            animation: pulse 1.8s infinite ease-in-out;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.7); }
+            50% { transform: scale(1.05); box-shadow: 0 0 0 12px rgba(255, 193, 7, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 193, 7, 0); }
+        }
+        .info-board {
+            background-color: var(--card-bg-color);
+            color: var(--text-color);
+            padding: 1.5rem;
+            border-radius: var(--border-radius-lg);
+        }
+        .info-board h4 i { color: var(--primary-color); }
+        .info-board ul { list-style: none; padding-left: 0; }
+        .info-board li { padding: 0.75rem 0; border-bottom: 1px solid var(--border-color); }
+        .info-board li:last-child { border-bottom: none; }
+        .info-board .text-muted { color: var(--text-light) !important; }
+        .quantity-input-group { max-width: 160px; /* Disesuaikan agar lebih pas */ }
+        .product-card-item .card-body { display: flex; flex-direction: column; }
+        .product-card-item .price, .product-card-item .product-reseller-price { margin-bottom: 0.5rem; }
+        .product-card-item .btn { margin-top: auto; } /* Tombol selalu di bawah */
+    </style> 
+    <div class="info-board my-5 shadow" data-aos="fade-right">
+        <h4 class="mb-3 d-flex align-items-center"><i class="fas fa-bullhorn fa-fw me-2"></i>Papan Informasi
+            <span class="ms-auto badge bg-primary rounded-pill" id="infoBoardBadgeCount">2</span>
+        </h4>
+        <ul class="list-unstyled" id="dynamicInfoBoard">
+
+
+                    <li class="py-2 border-bottom" data-item-id="683969c822388ae3b92fa710">
+                        <strong class="text-warning">
+                            <i class="fas fa-exclamation-triangle me-2"></i>INFOMASI PEMBELIAN APP PREMIUM:
+                        </strong>
+                        <span class="text-muted">KARENA KAMI BLM ISI STOK APP PREMIUM , JIKA INGIN MEMBELI BISA HUB CONTAC KAMI YA
+WA : +62 852-5883-6879
+TELE : t.me/justwendzzz</span>
+                        <small class="d-block text-end text-muted fst-italic mt-1">- 30 Mei</small>
+                    </li>
+
+                    <li class="py-2 border-bottom" data-item-id="6839637c22388ae3b92fa697">
+                        <strong class="text-danger">
+                            <i class="fas fa-tools me-2"></i>INFOMASI TOPUP &amp; DEPOSIT QRIS &amp; EWALLET LAINNYA:
+                        </strong>
+                        <span class="text-muted">Mohon Maaf Sebesar Besar nya Kalo, Halaman Topup Dan Deposit Payment Gateaway nya Lagi Maintenance, Jadi Bisa Beli Stok Yang Tersedia Terlebih Dahalu ..
+Terima Kasih
+
+> Tim WendzzzStore</span>
+                        <small class="d-block text-end text-muted fst-italic mt-1">- 30 Mei</small>
+                    </li>
+
+
+        </ul>
+        <p class="text-muted small mt-2 text-end">Update terakhir: <span id="infoBoardLastUpdate">Sabtu, 31 Mei</span></p>
+    </div>
+
+    <div class="row mb-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="col-md-12">
+            <div class="card shadow-sm border-0">
+                <div class="card-body p-4">
+                    <h5 class="text-center text-primary mb-3 fw-bold"><i class="fas fa-search me-2"></i>Cari Produk Toko Kami</h5>
+                    <form action="/products" method="GET" class="row g-3 align-items-center">
+                        <div class="col-md-6">
+                            <label for="search" class="visually-hidden">Cari Produk</label>
+                            <div class="input-group input-group-lg">
+                                <span class="input-group-text bg-light border-end-0"><i class="fas fa-search text-primary"></i></span>
+                                <input type="text" class="form-control border-start-0" id="search" name="search" placeholder="Nama produk/layanan toko..." value="">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="category" class="visually-hidden">Kategori</label>
+                            <div class="input-group input-group-lg">
+                                <span class="input-group-text bg-light border-end-0"><i class="fas fa-filter text-primary"></i></span>
+                                <select class="form-select border-start-0" id="category" name="category">
+                                    <option value="all" selected>Semua Kategori Toko</option>
+
+
+                                            <option value="app_premium" >
+                                                App Premium
+                                            </option>
+
+                                            <option value="pterodactyl_panel" >
+                                                Pterodactyl Panel
+                                            </option>
+
+                                            <option value="vps" >
+                                                Vps
+                                            </option>
+
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-2 d-grid">
+                            <button type="submit" class="btn btn-primary btn-lg">CARI</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-between align-items-center mb-4" data-aos="fade-up" data-aos-delay="200">
+        <h2 class="h3 fw-bold">Produk &amp; Layanan Toko Unggulan</h2>
+        <span class="text-muted small">29 item ditemukan</span>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+
+
+                <div class="col product-card-wrapper" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100 shadow-sm product-card-item" data-product-id="683874c94945124c65e7c7cd" data-category="app_premium">
+                        <div class="card-body">
+                            <h5 class="card-title mb-2">RESELLER PANEL PRIVATE</h5>
+
+                                <p class="card-text price"><strong>Rp 10.000</strong></p>
+
+                            <p class="card-text text-muted small mb-2">
+                                <i class="fas fa-tag me-1 text-primary"></i> App Premium
+                                <span class="ms-2"><i class="fas fa-box-open me-1 text-success"></i> Stok:
+                                    <span class="fw-bold
+                                        text-success">
+                                        5
+                                    </span>
+                                </span>
+                            </p>
+                            <p class="card-text flex-grow-1 small text-secondary mb-2">SPEK PANEL R16 C4
+DURASI PERMANENT</p>
+
+
+
+
+                                <div class="input-group input-group-sm my-2 quantity-input-group">
+                                    <span class="input-group-text">Jumlah:</span>
+                                    <input type="number" class="form-control product-quantity" value="1" min="1"
+                                           max="5"
+                                           data-product-id="683874c94945124c65e7c7cd" >
+                                </div>
+
+
+
+                                <a href="/login?returnTo=/checkout/683874c94945124c65e7c7cd" class="btn btn-outline-primary w-100"><i class="fas fa-sign-in-alt me-1"></i> Login untuk Beli</a>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col product-card-wrapper" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card h-100 shadow-sm product-card-item" data-product-id="683874394945124c65e7c7c0" data-category="app_premium">
+                        <div class="card-body">
+                            <h5 class="card-title mb-2">GSUIT X DOKU</h5>
+
+                                <p class="card-text price"><strong>Rp 2.500</strong></p>
+
+                            <p class="card-text text-muted small mb-2">
+                                <i class="fas fa-tag me-1 text-primary"></i> App Premium
+                                <span class="ms-2"><i class="fas fa-box-open me-1 text-success"></i> Stok:
+                                    <span class="fw-bold
+                                        text-success">
+                                        2
+                                    </span>
+                                </span>
+                            </p>
+                            <p class="card-text flex-grow-1 small text-secondary mb-2">Netlfi Sharing Dengan 4k , Durasi 1bulan</p>
+
+
+
+
+                                <div class="input-group input-group-sm my-2 quantity-input-group">
+                                    <span class="input-group-text">Jumlah:</span>
+                                    <input type="number" class="form-control product-quantity" value="1" min="1"
+                                           max="2"
+                                           data-product-id="6836af48a5fd9ea99438ce6d" >
+                                </div>
+
+
+
+                                <a href="/login?returnTo=/checkout/6836af48a5fd9ea99438ce6d" class="btn btn-outline-primary w-100"><i class="fas fa-sign-in-alt me-1"></i> Login untuk Beli</a>
+
+                        </div>
+                    </div>
+                </div>
+      <div class="col product-card-wrapper" data-aos="fade-up" data-aos-delay="500">
+                    <div class="card h-100 shadow-sm product-card-item" data-product-id="6835beb829abfac3693d5f65" data-category="app_premium">
+                        <div class="card-body">
+                            <h5 class="card-title mb-2">Viu Anti Limit 1 Tahun</h5>
+
+                                <p class="card-text price"><strong>Rp 500</strong></p>
+
+                            <p class="card-text text-muted small mb-2">
+                                <i class="fas fa-tag me-1 text-primary"></i> App Premium
+                                <span class="ms-2"><i class="fas fa-box-open me-1 text-success"></i> Stok:
+                                    <span class="fw-bold
+                                        text-success">
+                                        50
+                                    </span>
+                                </span>
+                            </p>
+                            <p class="card-text flex-grow-1 small text-secondary mb-2">Viu Anti Limit 1thn</p>
+
+
+
+
+                                <div class="input-group input-group-sm my-2 quantity-input-group">
+                                    <span class="input-group-text">Jumlah:</span>
+                                    <input type="number" class="form-control product-quantity" value="1" min="1"
+                                           max="50"
+                                           data-product-id="6835beb829abfac3693d5f65" >
+                                </div>
+
+
+
+                                <a href="/login?returnTo=/checkout/6835beb829abfac3693d5f65" class="btn btn-outline-primary w-100"><i class="fas fa-sign-in-alt me-1"></i> Login untuk Beli</a>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col product-card-wrapper" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100 shadow-sm product-card-item" data-product-id="683585bedd95100e645e90f1" data-category="app_premium">
+                        <div class="card-body">
+                            <h5 class="card-title mb-2">Alight Mation 1Tahun</h5>
+
+                                <p class="card-text price"><strong>Rp 3.000</strong></p>
+
+                            <p class="card-text text-muted small mb-2">
+                                <i class="fas fa-tag me-1 text-primary"></i> App Premium
+                                <span class="ms-2"><i class="fas fa-box-open me-1 text-success"></i> Stok:
+                                    <span class="fw-bold
+                                        text-success">
+                                        5
+                                    </span>
+                                </span>
+                            </p>
+                            <p class="card-text flex-grow-1 small text-secondary mb-2">Private , Full Garansi
+Berupa Akun Bukan Mod !!</p>
+
+
+
+
+                                <div class="input-group input-group-sm my-2 quantity-input-group">
+                                    <span class="input-group-text">Jumlah:</span>
+                                    <input type="number" class="form-control product-quantity" value="1" min="1"
+                                           max="5"
+                                           data-product-id="683585bedd95100e645e90f1" >
+                                </div>
+
+
+
+                                <a href="/login?returnTo=/checkout/683585bedd95100e645e90f1" class="btn btn-outline-primary w-100"><i class="fas fa-sign-in-alt me-1"></i> Login untuk Beli</a>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col product-card-wrapper" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card h-100 shadow-sm product-card-item" data-product-id="68357f05dd95100e645e9063" data-category="pterodactyl_panel">
+                        <div class="card-body">
+                            <h5 class="card-title mb-2">Panel pterodactyl 2GB</h5>
+
+                                <p class="card-text price"><strong>Rp 4.000</strong></p>
+
+                            <p class="card-text text-muted small mb-2">
+                                <i class="fas fa-tag me-1 text-primary"></i> Pterodactyl Panel
+                                <span class="ms-2"><i class="fas fa-box-open me-1 text-success"></i> Stok:
+                                    <span class="fw-bold
+                                        text-success">
+                                        93
+                                    </span>
+                                </span>
+                            </p>
+                            <p class="card-text flex-grow-1 small text-secondary mb-2">Spek Panel Ram 16 Core 4
+Full Garansi ,</p>
+
+
+
+
+
+
+                                <a href="/login?returnTo=/checkout/68357f05dd95100e645e9063" class="btn btn-outline-primary w-100"><i class="fas fa-sign-in-alt me-1"></i> Login untuk Beli</a>
+
+                        </div>
+                    </div>
+                </div>
+
+
+    </div>
+</div>
+                          
+<script>
+    if (typeof io !== 'undefined') {
+        const socket = io();
+        const dynamicInfoBoard = document.getElementById('dynamicInfoBoard');
+        const infoBoardBadgeCount = document.getElementById('infoBoardBadgeCount');
+        const infoBoardLastUpdate = document.getElementById('infoBoardLastUpdate');
+
+        function renderNewInfoItem(newItem) {
+            const li = document.createElement('li');
+            li.className = 'py-2 border-bottom';
+            li.setAttribute('data-item-id', newItem._id);
+            const itemType = newItem.type || 'info';
+            let iconClass = 'info-circle';
+            if (itemType === 'warning') iconClass = 'exclamation-triangle';
+            else if (itemType === 'promo') iconClass = 'gift';
+            else if (itemType === 'maintenance') iconClass = 'tools';
+            const creationDate = new Date(newItem.createdAt || Date.now());
+            const formattedDate = creationDate.toLocaleDateString('id-ID', {day:'numeric', month:'short'});
+            const tempDiv = document.createElement('div');
+            tempDiv.textContent = newItem.content;
+            const safeContent = tempDiv.innerHTML;
+            li.innerHTML = `
+                <strong class="text-${itemType === 'warning' ? 'warning' : (itemType === 'promo' ? 'success' : (itemType === 'maintenance' ? 'danger' : 'info'))}">
+                    <i class="fas fa-${iconClass} me-2"></i>${newItem.title}:
+                </strong>
+                <span class="text-muted">${safeContent}</span>
+                <small class="d-block text-end text-muted fst-italic mt-1">- ${formattedDate}</small>
+            `;
+            return li;
+        }
+
+        socket.on('newInfoBoardUpdate', (newItem) => {
+            if (!dynamicInfoBoard) return;
+            const noInfoMessageElement = document.getElementById('noInfoMessage');
+            if (noInfoMessageElement && noInfoMessageElement.parentNode === dynamicInfoBoard) {
+                dynamicInfoBoard.removeChild(noInfoMessageElement);
+            }
+            const existingItemElement = dynamicInfoBoard.querySelector(`li[data-item-id="${newItem._id}"]`);
+            if (existingItemElement) {
+                existingItemElement.remove();
+            }
+            const newLi = renderNewInfoItem(newItem);
+            if (dynamicInfoBoard.firstChild) {
+                dynamicInfoBoard.insertBefore(newLi, dynamicInfoBoard.firstChild);
+            } else {
+                dynamicInfoBoard.appendChild(newLi);
+            }
+            if (infoBoardBadgeCount) {
+                const currentBadgeCount = dynamicInfoBoard.querySelectorAll('li[data-item-id]').length;
+                infoBoardBadgeCount.textContent = currentBadgeCount;
+            }
+            if(infoBoardLastUpdate) {
+                infoBoardLastUpdate.textContent = new Date().toLocaleDateString('id-ID', { weekday: 'long', day: 'numeric', month: 'long' });
+            }
+        });
+
+        socket.on('infoBoardItemDeleted', (deletedItem) => {
+            if (!dynamicInfoBoard) return;
+            const itemElement = dynamicInfoBoard.querySelector(`li[data-item-id="${deletedItem._id}"]`);
+            if (itemElement) {
+                itemElement.remove();
+            }
+            if (infoBoardBadgeCount) {
+                const currentBadgeCount = dynamicInfoBoard.querySelectorAll('li[data-item-id]').length;
+                infoBoardBadgeCount.textContent = currentBadgeCount;
+            }
+            if (dynamicInfoBoard && dynamicInfoBoard.children.length === 0 && !document.getElementById('noInfoMessage')) {
+                const noInfoLi = document.createElement('li');
+                noInfoLi.id = 'noInfoMessage';
+                noInfoLi.className = 'text-muted py-2';
+                noInfoLi.innerHTML = '<i class="fas fa-comment-slash me-2"></i>Saat ini belum ada informasi terbaru.';
+                dynamicInfoBoard.appendChild(noInfoLi);
+            }
+            if(infoBoardLastUpdate) {
+                infoBoardLastUpdate.textContent = new Date().toLocaleDateString('id-ID', { weekday: 'long', day: 'numeric', month: 'long' });
+            }
+        });
+    }
+
+
+    document.querySelectorAll('.buy-now-btn').forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            const card = this.closest('.product-card-item');
+            const productId = card.dataset.productId;
+            const category = card.dataset.category;
+            let quantity = 1;
+
+            if (category === 'app_premium') {
+                const quantityInput = card.querySelector('.product-quantity');
+                if (quantityInput) {
+                    quantity = parseInt(quantityInput.value);
+                    if (isNaN(quantity) || quantity < 1) {
+                        quantity = 1;
+                    }
+                    const maxQuantity = parseInt(quantityInput.max);
+                     if (!isNaN(maxQuantity) && quantity > maxQuantity) {
+                        alert(`Jumlah maksimal untuk produk ini adalah ${maxQuantity}.`);
+                        quantityInput.value = maxQuantity;
+                        return;
+                    }
+                }
+            }
+            window.location.href = `/checkout/${productId}?quantity=${quantity}`;
+        });
+    });
+
+    document.querySelectorAll('.product-quantity').forEach(input => {
+        input.addEventListener('change', function() {
+            let value = parseInt(this.value);
+            const min = parseInt(this.min);
+            const max = parseInt(this.max);
+            if (isNaN(value) || value < min) {
+                this.value = min;
+            } else if (!isNaN(max) && value > max) {
+                 this.value = max;
+                 alert(`Jumlah maksimal untuk produk ini adalah ${max}.`);
+            }
+        });
+         input.addEventListener('keyup', function() { // Handle user typing too fast
+            let value = parseInt(this.value);
+            const min = parseInt(this.min);
+            const max = parseInt(this.max);
+            if (this.value !== '' && !isNaN(value)) { // Only validate if not empty and is a number
+                if (value < min) {
+                    // this.value = min; // Don't auto-correct on keyup, just on change or blur
+                } else if (!isNaN(max) && value > max) {
+                    this.value = max; // Auto-correct if typing past max
+                    alert(`Jumlah maksimal untuk produk ini adalah ${max}.`);
+                }
+            }
+        });
+    });
+
+</script>
+                        </div>
+                    </main>
+                </div>
+            </div>
+    </div>
+
+    <footer class="footer text-center">
+        <div class="container">
+            <p class="mb-1">© 2025 WendzzzStore.id. all rights reserved.</p>
+            <p class="mb-1">
+                <i class="fab fa-whatsapp"></i> <a href="https://wa.me/6285167089173" target="_blank">6285167089173</a>
+                <span class="mx-2">|</span>
+                <i class="fab fa-instagram"></i> <a href="https://instagram.com/qoupay_indonesia" target="_blank">@qoupay_indonesia</a>
+            </p>
+        </div>
+    </footer>
+
+
+        <div id="liveChatToggleContainer">
+            <button id="chatToggleButton" class="btn btn-primary rounded-circle p-0" type="button" data-bs-toggle="modal" data-bs-target="#liveChatModal">
+                <i class="fas fa-comments"></i>
+            </button>
+        </div>
+
+        <div class="modal fade" id="liveChatModal" tabindex="-1" aria-labelledby="liveChatModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+                <div class="modal-content" id="chatModalContent">
+                    <div class="modal-header bg-primary text-white">
+                        <h5 class="modal-title" id="liveChatModalLabel"><i class="fas fa-headset me-2"></i>Live Chat Support</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body p-0">
+                        <div id="chatMessages" class="p-3">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <form id="chatForm" class="w-100 d-flex">
+                            <input type="text" id="chatInput" class="form-control me-2" placeholder="Ketik pesan Anda...">
+                            <button type="submit" class="btn btn-success"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/script.js"></script>
+
+        <script src="/js/chat.js"></script>
+  
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            if (typeof Prism !== 'undefined') {
+                Prism.highlightAll();
+            }
+            if (typeof AOS !== 'undefined') {
+                AOS.init({
+                    duration: 700,
+                    once: true,
+                    offset: 30,
+                    easing: 'ease-in-out-quad'
+                });
+            }
+            const alertContainer = document.querySelector('.alert-container');
+            if(alertContainer && alertContainer.children.length > 0){
+                setTimeout(() => {
+                    let firstChild = alertContainer.firstChild;
+                    while(firstChild){
+                        alertContainer.removeChild(firstChild);
+                        firstChild = alertContainer.firstChild;
+                    }
+                }, 7000);
+            }
+        });
+    </script>                                           </body>
+                  
