@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WENDZZZ SIGN UP</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    body {
+      padding-top: 100px;
+      background: url('https://source.unsplash.com/1600x900/?technology,abstract') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    .bubble-label {
+      position: fixed;
+      top: 60px;
+      left: 30px;
+      z-index: 1030;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 48px;
+      font-weight: 700;
+      background: linear-gradient(135deg, #ffc0cb 0%, #ffffff 100%);
+      padding: 16px 32px;
+      border-radius: 35px;
+      color: #000000;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      opacity: 0;
+      transform: translateY(-20px);
+      animation: fadeSlideIn 1.2s ease forwards;
+      pointer-events: none;
+    }
+
+    .login-card-animate {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 1s ease forwards;
+      animation-delay: 0.5s;
+    }
+
+    @keyframes fadeSlideIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .bubble-label {
+        font-size: 32px;
+        padding: 12px 24px;
+        top: 55px;
+        left: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Label Besar -->
+  <div class="bubble-label">WENDZZZ SIGN UP</div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="z-index: 1040;">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">                                                               
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="/products"><i class="fas fa-store fa-fw"></i>Produk Toko</a></li>
+          <li class="nav-item"><a class="nav-link" href="/layanan"><i class="fas fa-bolt fa-fw"></i>Layanan PPOB</a></li>                                   
+          <li class="nav-item"><a class="nav-link" href="/docs"><i class="fas fa-book-open fa-fw"></i>Dokumentasi</a></li>
+          <li class="nav-item"><a class="nav-link" href="/info-board"><i class="fas fa-bullhorn fa-fw"></i>Info Board</a></li>
+        </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="/login"><i class="fas fa-sign-in-alt fa-fw"></i>Login</a></li>
+          <li class="nav-item"><a class="btn btn-outline-light btn-sm ms-lg-2 mt-2 mt-lg-0 active" href="/register"><i class="fas fa-user-plus fa-fw"></i>Register</a></li>
+        </ul>                                               
+      </div>                                              
+    </div>
+  </nav>
+
+  <!-- Form Register -->
+  <main class="container auth-form-container" style="padding-top: 80px;">
+    <div class="row justify-content-center">                    
+      <div class="col-md-6 col-lg-5">                             
+        <div class="card shadow-lg border-0 login-card-animate">
+          <div class="card-body p-4 p-md-5">
+            <div class="text-center mb-4">
+              <i class="fas fa-user-plus fa-3x text-success mb-3"></i>
+              <h2 class="card-title">Buat Akun Baru</h2>                                                             
+              <p class="text-muted">Isi form untuk membuat akun Anda.</p>                                                  
+            </div>                                                  
+            <form action="/register" method="POST">
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="username" name="username" placeholder="Username Anda" required>
+                <label for="username"><i class="fas fa-user me-2"></i>Username</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="email" name="email" placeholder="Email Anda" required>
+                <label for="email"><i class="fas fa-envelope me-2"></i>Email</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="password" name="password" placeholder="Password Anda" required>
+                <label for="password"><i class="fas fa-lock me-2"></i>Password</label>
+              </div>
+              <div class="form-floating mb-4">
+                <input type="password" class="form-control" id="confirm-password" name="confirm_password" placeholder="Konfirmasi Password" required>
+                <label for="confirm-password"><i class="fas fa-lock me-2"></i>Konfirmasi Password</label>
+              </div>
+              <div class="d-grid mb-3">
+                <button type="submit" class="btn btn-success btn-lg"><i class="fas fa-user-plus me-2"></i>Daftar</button>
+              </div>
+            </form>
+            <p class="mt-4 text-center text-muted">Sudah punya akun? <a href="/login" class="fw-bold">Login Sekarang</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer text-center mt-5 mb-4">
+    <div class="container">
+      <p class="mb-1">© 2025 WENDZZZ STORE. all rights reserved.</p>
+      <p class="mb-1">
+        <i class="fab fa-whatsapp"></i> <a href="https://wa.me/6285258836879" target="_blank">WhatsApp Contact</a>                                                                 
+        <span class="mx-2">|</span>                             
+        <i class="fab fa-instagram"></i> <a href="https://instagram.com/qoupay_indonesia" target="_blank">@qoupay_indonesia</a>                                             
+      </p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
