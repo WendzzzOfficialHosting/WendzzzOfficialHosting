@@ -135,7 +135,7 @@
   </footer>
 <script>
   const urlParams = new URLSearchParams(window.location.search);
-  const returnTo = urlParams.get('returnTo') || '/';
+  const returnTo = urlParams.get('returnTo') || './index.html';
 
   // Simpan tujuan redirect
   sessionStorage.setItem('redirectAfterLogin', returnTo);
